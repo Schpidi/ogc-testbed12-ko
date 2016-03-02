@@ -166,23 +166,47 @@
                     </section>
 
                    <section>
+                        <p><a class="image" href="http://geoserver.org"><img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/geoserver-logo.png" alt="GeoServer Logo" title="GeoServer Logo"/></a></p>
                         <h2>GeoServer in brief</h2>
                         <ul>
-                            <li><a class="image" href="http://geoserver.org"><img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/geoserver-logo.png" alt="GeoServer Logo" title="GeoServer Logo"/></a></li>
+                            <li>Can do a lot of things, focusing just on the testbed12 topics of interest</li>
+                            <li>Dimension support for WMS, can deal with dimensions in WMTS (see later how), WCS-EO extensions of our own to describe multiple dimensions</li>
+                            <li>NetCDF-CF as input for WMS/WMTS/WCS/WPS, NetCDF-CF out (WCS 2.0 only)</li>
+                            <li>Authentication - basic/digest/cas/j2ee/proxy - users from xml/dbms/ldap/...</li>
+                            <li>Authorization - advanced support with GeoFence plugin, authorize by area, attribute, whatever filter</li>
+                            <li>WPS process to add asynch support to WFS/WCS large data extractions</li>
+                            <li>GeoPackage generation (tiles and vector)</li>
                         </ul>
-                    </section>
-
+                   </section>
+                   <section>
+                      <h2>GeoWebCache/GeoServer WMTS dimension support</h2>
+                      <ul>
+                          <li>We can tell that "TIME", "ELEVATION" and "DIM_REFENCE_TIME" are valid request params to GWC</li>
+                          <li>Will build a separate tile cache for each combination of values</li>
+                          <li>Use "disk quota" to avoid disk space usage explosion</li>
+                          <li>In memory clustered cache for data with very frequent updates</li> 
+                          <img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/eumetsat-client.png"/>
+                    </ul>
+                   </section>
+                   <section>
+                      <p><a class="image" href="http://geoserver.org"><img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/geoserver-logo.png" alt="GeoServer Logo" title="GeoServer Logo"/></a></p>
+                      <h2>Drill down and discover multiple dimension relationships</h2>
+                      <ul>
+                          <li>Domains of the dimensions related with each other (e.g., reference_time and time)</li>
+                          <li>Need a way to find out from the client which values are available by <b>drilling down</b> from one dimension to the other</li>
+                          <li>Commonly done by exposing the ND mosaic index as a WFS layer, spatial, attribute filtering, paging and sorting available but...</li>
+                          <li>No direct way to correlate the dimensions exposed in WMS with the index exposed in WFS, we need to amend that</li>
+                          <li>Also, find more compact ways to list the available values e.g. <code>select distict(dim_att) where dim_att between x and y and ...</code></li> 
+                      </ul>
+                   </section>
                     <section>
                         <h2>Proposal to avoid requesting empty tiles</h2>
                         <ul>
                             <li>Return a custom HTTP header indicating an empty tile</li>
                             <li>Tiles on lower zoom levels don't need to be requested</li>
                         </ul>
-                    </section>
-                </section>
-
-                    <!-- TODO briefly discuss strategy to tell client empty tiles (bitmask needed on highest zoomlevel, etc. -> vector mask) -->
-
+                    </section>               
+            </section>
                 <section>
 
                     <section>
