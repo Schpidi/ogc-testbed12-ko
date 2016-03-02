@@ -8,8 +8,10 @@ Point your browser to the [online presentation](http://schpidi.github.io/ogc-tes
 or serve it locally.
 
 ```bash
-git clone
-cd
+git clone https://github.com/Schpidi/ogc-testbed12-ko.git
+cd ogc-testbed12-ko
+git submodule init
+git submodule update
 npm install
 grunt serve
 ```

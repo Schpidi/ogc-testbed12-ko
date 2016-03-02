@@ -121,8 +121,6 @@
 
                 <section>
                     <section>
-                        <p><a class="image" href="http://mapserver.org"><img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/mapserver-logo.png" alt="MapServer Logo" title="MapServer Logo"/></a></p>
-                        <p><a class="image" href="http://geoserver.org"><img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/geoserver-logo.png" alt="GeoServer Logo" title="GeoServer Logo"/></a></p>
                         <h2>NA006 WMTS for time-varying layers</h2>
                         <ul>
                             <li>Extend temporal WMTS tile assembly in MapCache - EOX</li>
@@ -132,14 +130,16 @@
                             <li>Improved Support for TIME and other dimensions in GeoServer WMS/WMTS - GeoSolutions</li>
                         </ul>
                     </section>
+
                     <section>
                         <h2>MapCache in brief</h2>
                         <ul>
+                            <li><a class="image" href="http://mapserver.org"><img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0; vertical-align:middle;" src="./images/mapserver-logo.png" alt="MapServer Logo" title="MapServer Logo"/></a> Suite</li>
                             <li>MIT-style license</li>
                             <li>Stable release 1.4</li>
                             <li>Tiling Library with Apache, FastCGI, Nginx, and Node frontends</li>
                             <li>Native code: Fast and Efficient</li>
-                            <li><a href="http://mapserver.com/documentation/mapcache">mapserver.com/documentation/mapcache</a></li>
+                            <li><a href="http://mapserver.org/mapcache/index.html">mapserver.org/mapcache/index.html</a></li>
                             <li><a href="http://github.com/mapserver/mapcache">github.com/mapserver/mapcache</a></li>
                         </ul>
                     </section>
@@ -154,31 +154,31 @@
                             <li>Reconstruct paletted 1bit PNG from uniform color</li>
                             <li>and many more</li>
                         </ul>
-                   </section>
+                    </section>
+                    <section>
+                        <h2>Time dimension</h2>
+                        <ul>
+                            <li>Each timestamp corresponds to a limited extent</li>
+                            <li>Dynamic Mosaic given a requested time interval</li>
+                            <li>Create Animated GIF from selected tiles</li>
+                        </ul>
+                        <img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/eoxclient.png"/>
+                    </section>
 
                    <section>
-                      <h2>Dimensions</h2>
-                      <ul>
-                         <li>Multiple Dimensions per Tileset
-                         <li>E.g. Forecast Time, Elevation, Client ID
-                         <li>Multiple Types
-                            <ul>
-                               <li>List of Values
-                               <li>Intervals
-                               <li>Regular Expression
-                            </ul>
-                         <li>Use-Case: <a href="http://www.bom.gov.au/australia/meteye/">BoM MetEye</a>
-                         <li>Coming soon: Tile assembling when multiple dimension values passed
-                     </ul>
-                   </section>
-                   <section>
-                      <h2>Time Dimension</h2>
-                      <ul>
-                         <li>Each timestamp corresponds to a limited extent
-                         <li>Dynamic Mosaic given a requested time interval
-                         <li>Create Animated GIF from selected tiles (soon)
-                     </ul>
-                   </section>
+                        <h2>GeoServer in brief</h2>
+                        <ul>
+                            <li><a class="image" href="http://geoserver.org"><img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/geoserver-logo.png" alt="GeoServer Logo" title="GeoServer Logo"/></a></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Proposal to avoid requesting empty tiles</h2>
+                        <ul>
+                            <li>Return a custom HTTP header indicating an empty tile</li>
+                            <li>Tiles on lower zoom levels don't need to be requested</li>
+                        </ul>
+                    </section>
                 </section>
 
                     <!-- TODO briefly discuss strategy to tell client empty tiles (bitmask needed on highest zoomlevel, etc. -> vector mask) -->
