@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>OGC Testbed-12 EOX &amp; GeoSolutions Presentation</title>
+
+        <meta name="description" content="OGC Testbed-12 EOX &amp; GeoSolutions Presentation">
+        <meta name="author" content="Stephan Meissl, Andrea Aime">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
+        <link rel="stylesheet" href="reveal.js/css/theme/eox.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="reveal.js/lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <div class="slides">
+
+                <section>
+                    <section>
+                        <h2>OGC Testbed-12 Kick-Off</h2>
+                        <p>USGS - Reston, VA - 2016-03-03</p>
+                        <br/>
+                        <p>Stephan Meißl <a href="mailto:stephan.meissl@eox.at">stephan.meissl@eox.at</a> <a href="https://twitter.com/Schpidi">@Schpidi</a></p>
+                        <a class="image" href="http://eox.at"><img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/eox-logo.png" alt="EOX IT Services GmbH, Austria" title="EOX IT Services GmbH, Austria"/></a>
+                        <p>Andrea Aime <a href="mailto:andrea.aime@geo-solutions.it">andrea.aime@geo-solutions.it</a> <a href="https://twitter.com/geowolf">@geowolf</a></p>
+                        <a class="image" href="http://geo-solutions.it"><img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/geosolutions-logo.png" alt="GeoSolutions, Italy" title="GeoSolutions, Italy"/></a>
+                        <br/>
+                        <p><a rel="license" href="//creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0; margin:0 0 12px 0;" src="//i.creativecommons.org/l/by/4.0/80x15.png" /></a><small>&nbsp;This work is licensed under a <a rel="license" href="//creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</small></p>
+                        <aside class="notes">
+                            <p>Thanks for your attention</p>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h2>Contributions by EOX &amp; GeoSolutions</h2>
+                        <h2>LSA Thread</h2>
+                        <br/>
+                        <ul>
+                            <li>19 Coverages</li>
+                            <ul>
+                                <li>NA001 WCS new profile 1</li>
+                                <li>NA006 WMTS for time-varying layers</li>
+                                <li>NA007 WMS for NetCDF</li>
+                            </ul>
+                            <br/>
+                            <li>16 Big Data Tiles</li>
+                            <ul>
+                                <li>A017 Big Data Tile Database Implementation</li>
+                                <li>A076 Contributions to Big Data Database ER</li>
+                            </ul>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Parallel activity EVO-ODAS</h2>
+                        <ul>
+                            <li>Coordinated by DLR - German Aerospace Center</li>
+                            <li>ESA funded project</li>
+                            <li>Improve the acceptance of online EO data access services and standards and to promote their evolution and diffusion</li>
+                            <li>TODO link to RSS pages</li>
+                        </ul>
+                    </section>
+
+                </section>
+
+                <section>
+
+                    <section>
+                        <h2>NA001 WCS new profile 1</h2>
+                        <ul>
+                            <li>Extend EO-WCS support for 3D space and 1D time data in EOxServer</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <a class="image" href="http://eoxserver.org"><img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/eoxserver-logo.png" alt="EOxServer Logo" title="EOxServer Logo"/></a>
+                        <h2>EOxServer in brief</h2>
+                        <ul>
+                            <li>MIT-style license</li>
+
+                            <li>Version 0.2.0 released on May 4th 2012</li>
+                            <li>WCS, EO-WCS, WMS, EO-WMS, WCS-T (synchronous & asynchronous)</li>
+                            <li>Rectified- & ReferenceableGridCoverages</li>
+                            <li>Client for demonstrating integrated usage of EO-WMS & EO-WCS (used for generation of above EO WCS demo slides)</li>
+                            <li>Admin app & Log viewer</li>
+                            <li>Command line tools: "eoxserver-admin.py create_instance ...", eoxs_add_dataset_series, eoxs_register_dataset, eoxs_synchronize</li>
+                            <li>Python Package Index (PyPI)Rectified- and ReferenceableGridCoverages</li>
+                            <li>DatasetSeries and StitchedMosaics</li>
+                            <li>Integration with security system (IDMS)</li>
+
+                            <li>Included on OSGeo Live</li>
+                            <li><a href="http://eoxserver.org">eoxserver.org</a></li>
+                            <li><a href="http://github.com/EOxServer/eoxserver">github.com/EOxServer/eoxserver</a></li>
+                        </ul>
+                    </section>
+
+                    <!-- TODO Screenshot from VirES -> 1D data, Screenshot/Video from TAMP -> 3D data -->
+                </section>
+
+                <section>
+                    <section>
+                        <p><a class="image" href="http://mapserver.org"><img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/mapserver-logo.png" alt="MapServer Logo" title="MapServer Logo"/></a></p>
+                        <p><a class="image" href="http://geoserver.org"><img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/geoserver-logo.png" alt="GeoServer Logo" title="GeoServer Logo"/></a></p>
+                        <h2>NA006 WMTS for time-varying layers</h2>
+                        <ul>
+                            <li>Extend temporal WMTS tile assembly in MapCache - EOX</li>
+                            <li>Implement logic to avoid requesting empty tiles in MapCache - EOX</li>
+                            <li>Participate in OGC WMS.SWG - EOX</li>
+                            <li>Support for communication of empty areas in GeoServer WMS/WMTS - GeoSolutions</li>
+                            <li>Improved Support for TIME and other dimensions in GeoServer WMS/WMTS - GeoSolutions</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>MapCache in brief</h2>
+                        <ul>
+                            <li>MIT-style license</li>
+                            <li>Stable release 1.4</li>
+                            <li>Tiling Library with Apache, FastCGI, Nginx, and Node frontends</li>
+                            <li>Native code: Fast and Efficient</li>
+                            <li><a href="http://mapserver.com/documentation/mapcache">mapserver.com/documentation/mapcache</a></li>
+                            <li><a href="http://github.com/mapserver/mapcache">github.com/mapserver/mapcache</a></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>MapCache main features</h2>
+                        <ul>
+                            <li>Multiple Protocols like WMTS, WMS, TMS, etc.</li>
+                            <li>Multiple cache backends e.g. SQLite, disk, (Geo)TIFF, REST</li>
+                            <li>Tile Management Features: seeding, recompression, interpolation</li>
+                            <li>(OGC) Proxy: serve from cache if possible, forward otherwise</li>
+                            <li>Mixed jpeg + png format</li>
+                            <li>Reconstruct paletted 1bit PNG from uniform color</li>
+                            <li>and many more</li>
+                        </ul>
+                   </section>
+
+                   <section>
+                      <h2>Dimensions</h2>
+                      <ul>
+                         <li>Multiple Dimensions per Tileset
+                         <li>E.g. Forecast Time, Elevation, Client ID
+                         <li>Multiple Types
+                            <ul>
+                               <li>List of Values
+                               <li>Intervals
+                               <li>Regular Expression
+                            </ul>
+                         <li>Use-Case: <a href="http://www.bom.gov.au/australia/meteye/">BoM MetEye</a>
+                         <li>Coming soon: Tile assembling when multiple dimension values passed
+                     </ul>
+                   </section>
+                   <section>
+                      <h2>Time Dimension</h2>
+                      <ul>
+                         <li>Each timestamp corresponds to a limited extent
+                         <li>Dynamic Mosaic given a requested time interval
+                         <li>Create Animated GIF from selected tiles (soon)
+                     </ul>
+                   </section>
+                </section>
+
+                    <!-- TODO briefly discuss strategy to tell client empty tiles (bitmask needed on highest zoomlevel, etc. -> vector mask) -->
+
+                <section>
+
+                    <section>
+                        <h2>NA007 </h2>
+                        <ul>
+                            <li>Add support for WMS extensions of ncWMS in EOxServer e.g. color scales in GetMap requests or GetTimeseries request type - EOX</li>
+                            <li>Add support to filter WMS Capabilities e.g. XPath in EOxServer - EOX</li>
+                            <li>Add support for further WMS extensions of ncWMS in EOxServer - EOX</li>
+                            <li>Enhance NetCDF-CF metadata handling in EOxServer - EOX</li>
+                            <li>Dynamic ColorMaps Support in GeoServer WMS - GeoSolutions</li>
+                            <li>Improved GetLegendGraphic in GeoServer WMS - GeoSolutions</li>
+                            <li>Simplified Harvesting of NetCDF-CF files in GeoServer - GeoSolutions</li>
+                            <li>Improved GetCapabilities for large number of datasets (possibly using XPath) in GeoServer - GeoSolutions</li>
+                        </ul>
+                    </section>
+
+                </section>
+
+                <section>
+
+                    <section>
+                        <h2>LSA - Big Data Tiles</h2>
+                        <ul>
+                            <li>Contributions to &amp; review of Big Data Database ER</li>
+                            <li>Big Data Tile Database Implementation</li>
+                            <ul>
+                                <li>Evaluate PostgreSQL as alternative to SQLite in GeoPackage</li>
+                                <li>Implement database generation, dump, and restore scripts for PostgreSQL as alternative to SQLite in GeoPackage</li>
+                            </ul>
+                        </ul>
+                    </section>
+
+                </section>
+
+                <section>
+                    <h2>OGC Testbed-12 Kick-Off</h2>
+                    <p>USGS - Reston, VA - 2016-03-03</p>
+                    <!-- TODO <p><a href="//schpidi.github.io/ogc-testbed12-ko">schpidi.github.io/ogc-testbed12-ko</a></p>-->
+                    <br/>
+                    <p>Stephan Meißl <a href="mailto:stephan.meissl@eox.at">stephan.meissl@eox.at</a> <a href="https://twitter.com/Schpidi">@Schpidi</a></p>
+                    <a class="image" href="http://eox.at"><img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/eox-logo.png" alt="EOX IT Services GmbH, Austria" title="EOX IT Services GmbH, Austria"/></a>
+                    <p>Andrea Aime <a href="mailto:andrea.aime@geo-solutions.it">andrea.aime@geo-solutions.it</a> <a href="https://twitter.com/geowolf">@geowolf</a></p>
+                    <a class="image" href="http://geo-solutions.it"><img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/geosolutions-logo.png" alt="GeoSolutions, Italy" title="GeoSolutions, Italy"/></a>
+                    <br/>
+                    <p><a rel="license" href="//creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0; margin:0 0 12px 0;" src="//i.creativecommons.org/l/by/4.0/80x15.png" /></a><small>&nbsp;This work is licensed under a <a rel="license" href="//creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</small></p>
+                    <aside class="notes">
+                        <p>Thanks for your attention</p>
+                    </aside>
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="reveal.js/lib/js/head.min.js"></script>
+        <script src="reveal.js/js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                keyboard: true,
+                touch: true,
+                overview: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
