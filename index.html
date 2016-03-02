@@ -99,24 +99,25 @@
                         <h2>EOxServer in brief</h2>
                         <ul>
                             <li>MIT-style license</li>
-
-                            <li>Version 0.2.0 released on May 4th 2012</li>
-                            <li>WCS, EO-WCS, WMS, EO-WMS, WCS-T (synchronous & asynchronous)</li>
-                            <li>Rectified- & ReferenceableGridCoverages</li>
-                            <li>Client for demonstrating integrated usage of EO-WMS & EO-WCS (used for generation of above EO WCS demo slides)</li>
-                            <li>Admin app & Log viewer</li>
-                            <li>Command line tools: "eoxserver-admin.py create_instance ...", eoxs_add_dataset_series, eoxs_register_dataset, eoxs_synchronize</li>
-                            <li>Python Package Index (PyPI)Rectified- and ReferenceableGridCoverages</li>
-                            <li>DatasetSeries and StitchedMosaics</li>
-                            <li>Integration with security system (IDMS)</li>
-
+                            <li>Closely following the concepts of WCS &amp; EO-WCS</li>
+                            <li>Implementing WCS, EO-WCS, WMS, EO-WMS, WCS-T, WPS, OpenSearch, etc.</li>
+                            <li>Based on Open Source stack including Django, MapServer, GDAL, etc.</li>
                             <li>Included on OSGeo Live</li>
                             <li><a href="http://eoxserver.org">eoxserver.org</a></li>
                             <li><a href="http://github.com/EOxServer/eoxserver">github.com/EOxServer/eoxserver</a></li>
                         </ul>
                     </section>
 
-                    <!-- TODO Screenshot from VirES -> 1D data, Screenshot/Video from TAMP -> 3D data -->
+                    <section>
+                        <img src="./images/2d_1.png"/>
+                    </section>
+                    <section>
+                        <img src="./images/2d_2.png"/>
+                    </section>
+                    <section>
+                        <iframe width="853" height="480" src="https://www.youtube.com/embed/qDazKJQBxuE" frameborder="0" allowfullscreen></iframe>
+                    </section>
+
                 </section>
 
                 <section>
@@ -184,11 +185,11 @@
                           <li>We can tell that "TIME", "ELEVATION" and "DIM_REFENCE_TIME" are valid request params to GWC</li>
                           <li>Will build a separate tile cache for each combination of values</li>
                           <li>Use "disk quota" to avoid disk space usage explosion</li>
-                          <li>In memory clustered cache for data with very frequent updates</li> 
+                          <li>In memory clustered cache for data with very frequent updates</li>
                           <img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/eumetsat-client.png"/>
-                    </ul>
-                   </section>
-                   <section>
+                      </ul>
+                    </section>
+                    <section>
                       <p><a class="image" href="http://geoserver.org"><img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/geoserver-logo.png" alt="GeoServer Logo" title="GeoServer Logo"/></a></p>
                       <h2>Drill down and discover multiple dimension relationships</h2>
                       <ul>
@@ -196,17 +197,20 @@
                           <li>Need a way to find out from the client which values are available by <b>drilling down</b> from one dimension to the other</li>
                           <li>Commonly done by exposing the ND mosaic index as a WFS layer, spatial, attribute filtering, paging and sorting available but...</li>
                           <li>No direct way to correlate the dimensions exposed in WMS with the index exposed in WFS, we need to amend that</li>
-                          <li>Also, find more compact ways to list the available values e.g. <code>select distict(dim_att) where dim_att between x and y and ...</code></li> 
+                          <li>Also, find more compact ways to list the available values e.g. <code>select distict(dim_att) where dim_att between x and y and ...</code></li>
                       </ul>
-                   </section>
+                    </section>
+
                     <section>
                         <h2>Proposal to avoid requesting empty tiles</h2>
                         <ul>
                             <li>Return a custom HTTP header indicating an empty tile</li>
                             <li>Tiles on lower zoom levels don't need to be requested</li>
                         </ul>
-                    </section>               
-            </section>
+                    </section>
+
+                </section>
+
                 <section>
 
                     <section>
@@ -263,7 +267,7 @@
                 <section>
                     <h2>OGC Testbed-12 Kick-Off</h2>
                     <p>USGS - Reston, VA - 2016-03-03</p>
-                    <!-- TODO <p><a href="//schpidi.github.io/ogc-testbed12-ko">schpidi.github.io/ogc-testbed12-ko</a></p>-->
+                    <p><a href="//schpidi.github.io/ogc-testbed12-ko">schpidi.github.io/ogc-testbed12-ko</a></p>
                     <br/>
                     <p>Stephan Meißl <a href="mailto:stephan.meissl@eox.at">stephan.meissl@eox.at</a> <a href="https://twitter.com/Schpidi">@Schpidi</a></p>
                     <a class="image" href="http://eox.at"><img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/eox-logo.png" alt="EOX IT Services GmbH, Austria" title="EOX IT Services GmbH, Austria"/></a>
