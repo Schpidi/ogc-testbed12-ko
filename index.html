@@ -205,7 +205,17 @@
                     </section>
 
                     <section>
-                        <h2>Proposal to avoid requesting empty tiles</h2>
+                        <h2>Avoid requesting empty tiles - idea 1</h2>
+                        <ul>
+                            <li>Have a separate binary grid reporting availability</li>
+                            <li>One tile to report the availability of 256x256 "data" tiles</li>
+                            <li>Served as a separate WMTS layer with no/custom CRS, and linked to the data layer somehow?</li>
+                        </ul>
+                        <img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0" src="./images/wmts-grid-2.png"/>
+                    </section>
+
+                    <section>
+                        <h2>Avoid requesting empty tiles - idea 2</h2>
                         <ul>
                             <li>Return a custom HTTP header indicating an empty tile</li>
                             <li>Tiles on lower zoom levels don't need to be requested</li>
