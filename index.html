@@ -170,20 +170,22 @@
                         <p><a class="image" href="http://geoserver.org"><img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/geoserver-logo.png" alt="GeoServer Logo" title="GeoServer Logo"/></a></p>
                         <h2>GeoServer in brief</h2>
                         <ul>
-                            <li>Can do a lot of things, focusing just on the testbed12 topics of interest</li>
-                            <li>Dimension support for WMS, can deal with dimensions in WMTS (see later how), WCS-EO extensions of our own to describe multiple dimensions</li>
-                            <li>NetCDF-CF as input for WMS/WMTS/WCS/WPS, NetCDF-CF out (WCS 2.0 only)</li>
-                            <li>Authentication - basic/digest/cas/j2ee/proxy - users from xml/dbms/ldap/...</li>
-                            <li>Authorization - advanced support with GeoFence plugin, authorize by area, attribute, whatever filter</li>
-                            <li>WPS process to add asynch support to WFS/WCS large data extractions</li>
+                            <li>WMS/WFS/WCS/WPS/CSW implementation</li>
+                            <li>GUI based configuration/REST service based configuration</li>
+                            <li>Dimension support in WMS, WMTS, and WCS/WCS-EO (with custom extensions)</li>
+                            <li>NetCDF-CF support as input for most services</li>
+                            <li>NetCDF-CF output in WCS 2.0 only</li>
+                            <li>Pluggable Authentication - basic/digest/cas/j2ee/proxy</li>
+                            <li>Pluggable Authorization - authorize by area, attribute, whatever filter</li>
+                            <li>WPS process for asynch extraction of large data extractions</li>
                             <li>GeoPackage generation (tiles and vector)</li>
                         </ul>
                    </section>
                    <section>
                       <h2>GeoWebCache/GeoServer WMTS dimension support</h2>
                       <ul>
-                          <li>We can tell that "TIME", "ELEVATION" and "DIM_REFENCE_TIME" are valid request params to GWC</li>
-                          <li>Will build a separate tile cache for each combination of values</li>
+                          <li>Configure GWC to accept "TIME", "ELEVATION" and "DIM_REFENCE_TIME" as valid request params</li>
+                          <li>Builds a separate tile cache for each combination of values</li>
                           <li>Use "disk quota" to avoid disk space usage explosion</li>
                           <li>In memory clustered cache for data with very frequent updates</li>
                           <img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/eumetsat-client.png"/>
@@ -207,6 +209,7 @@
                             <li>Return a custom HTTP header indicating an empty tile</li>
                             <li>Tiles on lower zoom levels don't need to be requested</li>
                         </ul>
+                        <img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0" src="./images/wmts-grid.png"/>
                     </section>
 
                 </section>
@@ -246,6 +249,23 @@
                      </ul>
                       <img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/dynlegendgraphic.png"/>
                     </section>
+                    <section>
+                      <p><a class="image" href="http://geoserver.org"><img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/geoserver-logo.png" alt="GeoServer Logo" title="GeoServer Logo"/></a></p>
+                      <h2>Easier setup of NetCDF mosaics in GeoServer</h2>
+                      <ul>
+                          <li>Now requires setting up a XML mapping file describing the structure of the file</li>
+                          <li>Automatically setup the data leveraging the CF conventions instead</li>
+                     </ul>
+                    </section>
+                    <section>
+                      <p><a class="image" href="http://geoserver.org"><img style="background-color:rgba(255, 255, 255, 0); box-shadow:0 0 0;" src="./images/geoserver-logo.png" alt="GeoServer Logo" title="GeoServer Logo"/></a></p>
+                      <h2>Improve working against large capabilities documents</h2>
+                      <ul>
+                          <li>Search in very large capabilities documents, lots of layer (XPath?)</li>
+                          <li>Move out long dimension listings to a separate set of pageable, searchable calls</li>
+                     </ul>
+                    </section>
+
                 </section>
 
                 <section>
